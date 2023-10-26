@@ -1,5 +1,4 @@
 # Tetris-AI
-Tetris AI bot
 <h1>Doelstelling(en)</h1>
 <h1>Probleemstelling</h1>
 <h1>Analyse</h1>
