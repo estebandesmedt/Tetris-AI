@@ -1,0 +1,35 @@
+Tetris is een puzzel spel voor oud en jong dat makkelijk te leren is en speciaal voor onze bezoekers die het spel nog nooit gespeeld hebben staat hier een handleiding met daarin de spelregels en enkele handige tips om veel punten te scoren.
+
+Het speelveld
+
+Bij de meeste Tetris spelletjes is het lege speelveld een raster van 10 bij 20 met naast dit veld meestal een score aanduiding en andere informatie zoals het level waarin je zit en de tijd die nodig is. Ook krijg je hier te zien wat het eerstvolgende blok is. Als het spel begint vallen er vanaf boven langzaam blokken het veld in met verschillende vormen, deze blokken zijn de puzzelstukken, ook wel tetromino’s genoemd en hebben allemaal de vorm van een letter.
+
+Een Standaard Tetris spel heeft de volgende 7 tetromino’s:
+
+Er zijn 7 tetromino's uit een Tetris spel
+
+Het doel van Tetris
+
+Het doel is om de blokken naar beneden te laten vallen en zo snel mogelijk horizontale rijen te verwijderen. De rij verdwijnt als er op elke plek ten minste 1 stukje van een tetromino ligt. Je moet de vallende blokken dus roteren en naar links of rechts verschuiven totdat ze klaarliggen voor een volle lijn. Als het blokje eenmaal gevallen is dan kun je deze niet meer bewegen en valt er een nieuwe.
+
+Een volle rij wegspelen in het Tetris spelIn bovenstaande afbeelding zie je het groene Z-blokje, deze is op weg naar de lege plek in de bovenste horizontale rij, als het blok het lege gat raakt, dan heb je een volle rij en worden de blokjes met een rode x automatisch weggespeeld. Je moet de blokken proberen zo laag mogelijk te houden want als de stapels zo hoog worden dat ze de bovenkant van het veld raken dan is het spel afgelopen.
+
+De Score en het maken van een Tetris
+
+Hoe meer rijen je in 1 keer verwijderd, hoe meer punten je krijgt en hoe langer je het volhoudt om niet de bovenkant van het spel te raken, hoe hoger het level is waarin je komt. De meeste Tetris versies die vanaf 2006 gemaakt zijn gebruiken het volgende puntensysteem:
+
+1 lijn weggespeeld: 100 punten x het level waar je in speelt
+
+2 lijnen weggespeeld: 200 punten x het level
+
+3 lijnen weggespeeld: 500 punten x het level
+
+4 lijnen weggespeeld: 800 punten x het level
+
+Je kunt alleen 4 lijnen in 1 keer wegspelen met de langwerpige tetromino (I), door op de juiste manier te stapelen kun je een ingang maken van 4 blokken hoog waar je deze kunt inschuiven, alle 4 de rijen zullen dan in 1 keer verdwijnen. Dit heet een Tetris en is dus 800 punten waard.
+
+Bediening van het spel
+
+Tetris kun je op meerdere manieren spelen, het ligt er maar net aan op welk apparaat je bezig bent. Speel je op een pc en laptop dan kun je de blokken verplaatsen en roteren met de pijltjestoetsen en speel je op een tablet of mobiele telefoon, dan kun je dit doen door te swipen. We hebben op alle spelpagina’s van onze website instructies geplaats, lees deze eerst even door zodat je goed voorbereid aan een spel begint.
+
+Als je het eenmaal een beetje doorhebt, kan het soms lang duren voordat een blok die je al in de juiste positie hebt gedraaid helemaal beneden is. Om sneller te kunnen spelen is er vaak een optie om de blokken sneller te laten vallen, meestal doe je dit door naar beneden te swipen of de pijltjestoetsen naar beneden in te drukken, dit heet de soft-drop. Je hebt ook de hard drop, hiervoor druk je op de spatiebalk of tik je op het scherm, het blokje ligt dan meteen beneden. Let wel op: na het gebruiken van de hard-drop kun je de tetromino niet meer verplaatsen.
