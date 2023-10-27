@@ -1,22 +1,47 @@
 #Tetris Python
 
-def moveRight():
-    # horizontal index +1
+# # Tetris welcome
+# print("-------------TETRIS-------------")
+# print("................................")
 
-def moveLeft():
-    # horizontal index -1
+# # Create a fixed 2D array of size 20x10 with each cell initialized to the string "[ ]"
+# tetrisGrid = [["[ ]" for _ in range(10)] for _ in range(20)]
 
-def moveDown():
-    # vertical index +1
+# # Print the 2D array with borders
+# for i, row in enumerate(tetrisGrid):
+#     # Print the left border
+#     print("|", end='')
 
-def rotatePiece():
-    # rotate piece
+#     for j, element in enumerate(row):
+#         print(element, end='')
 
-def lineRemove():
-    # remove line and add score with scoreCount()
+#     # Print the right border
+#     print("|")
 
-def scoreCount():
-    # count score
+# # Print the bottom border with the correct length
+# print("+" + "-" * (3 * len(tetrisGrid[0])) + "+")
+
+
+
+
+# def moveRight():
+#     # horizontal index +1
+
+# def moveLeft():
+#     # horizontal index -1
+
+# def moveDown():
+#     # vertical index +1
+
+# def rotatePiece():
+#     # rotate piece
+
+# def lineRemove():
+#     # remove line and add score with scoreCount()
+
+# def scoreCount():
+#     # count score
+
 
 
 
