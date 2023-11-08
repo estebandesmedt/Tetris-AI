@@ -2,6 +2,7 @@ import pygame, sys
 from game import Game
 from colors import Colors
 import time
+from tetrisai import TetrisAI
 
 pygame.init()
 start_time = time.time()
