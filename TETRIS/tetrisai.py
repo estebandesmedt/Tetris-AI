@@ -1,11 +1,12 @@
 from game import Game
+import copy
 
 class TetrisAI:
     def __init__(self):
         # Define the parameters for the heuristic function
         self.a = -1 #height
-        self.b = 10 #lines
-        self.c = -100 #holes
+        self.b = 2 #lines
+        self.c = -1 #holes
         self.d = -1 #bumpiness
 
     def get_best_move(self, current_piece, grid, next_piece):
@@ -14,9 +15,13 @@ class TetrisAI:
 
         for rotation in range(4):
             for x in range(-5, 6):
-                # print(rotation, x)
+                print(rotation, x)
                 temp_game = Game()
-                temp_game.grid.grid = [row[:] for row in grid.grid]
+                
+                # Make a deep copy of the grid and other relevant game state
+                temp_game.grid.grid = [row[:] for row in copy.deepcopy(grid.grid)]
+                # Optionally, you can copy other state variables as well
+                
                 for _ in range(rotation):
                     temp_game.rotate()
                 if x < 0:
@@ -30,8 +35,9 @@ class TetrisAI:
                 if score > best_score:
                     best_score = score
                     best_move = (rotation, x)
-        print(temp_game.grid)
-        # print("Best Move:", best_move)
+        
+        print(temp_game.grid)  # This will show the grid state for each move
+        print("Best Move:", best_move)
         return best_move
 
     def calculate_score(self, grid, current_piece, next_piece):
@@ -46,7 +52,7 @@ class TetrisAI:
             self.c * holes +
             self.d * bumpiness
         )
-        # print("Score:", score)
+        print("Score:", score)
         return score
 
     def calculate_aggregate_height(self, grid):
@@ -60,7 +66,7 @@ class TetrisAI:
                     break
 
         aggregate_height = sum(heights)
-        # print("agg", aggregate_height)
+        print("agg", aggregate_height)
         return aggregate_height
 
     def calculate_complete_lines(self, grid):
@@ -68,7 +74,7 @@ class TetrisAI:
         for row in range(grid.num_rows):
             if all(cell != 0 for cell in grid.grid[row]):
                 completed_lines += 1
-        # print("lines", completed_lines)
+        print("lines", completed_lines)
         return completed_lines
 
     def calculate_holes(self, grid):
@@ -83,7 +89,7 @@ class TetrisAI:
                     hole_found = True
                 elif grid.grid[row][col] == 1 and hole_found:
                     holes += 1
-        # print("holes", holes)
+        print("holes", holes)
         return holes
 
     def calculate_bumpiness(self, grid):
@@ -98,5 +104,5 @@ class TetrisAI:
 
         for i in range(grid.num_cols - 1):
             bumpiness += abs(heights[i] - heights[i + 1])
-        # print("bump", bumpiness)
+        print("bump", bumpiness)
         return bumpiness
