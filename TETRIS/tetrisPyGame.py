@@ -1,8 +1,10 @@
 import pygame, sys
 from game import Game
 from colors import Colors
+import time
 
 pygame.init()
+start_time = time.time()
 
 title_font = pygame.font.Font(None, 40)
 score_surface = title_font.render("Score", True, Colors.white)
@@ -12,9 +14,6 @@ game_over_surface = title_font.render("GAME OVER", True, Colors.white)
 score_rect = pygame.Rect(320, 55, 170, 60)
 next_rect = pygame.Rect(320, 215, 170, 180)
 
-
-
-
 screen = pygame.display.set_mode((500,620))
 pygame.display.set_caption("Python Tetris")
 
@@ -23,9 +22,12 @@ clock = pygame.time.Clock()
 game = Game()
 
 GAME_UPDATE = pygame.USEREVENT
-pygame.time.set_timer(GAME_UPDATE, 200)
+GAME_SPEED = 200
+pygame.time.set_timer(GAME_UPDATE, GAME_SPEED)
 
 while True:
+    elapsed_time = time.time() - start_time
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
