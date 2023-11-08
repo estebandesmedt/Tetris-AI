@@ -78,7 +78,7 @@ class TetrisAI:
 
 class TetrisGame:
     def __init__(self, grid):
-        self.grid = grid
+        self.grid = [list(row) for row in grid]
 
     def rotate(self):
         self.grid = list(zip(*self.grid[::-1]))
@@ -87,4 +87,6 @@ class TetrisGame:
         self.grid = [row[1:] + [0] for row in self.grid]
 
     def move_right(self):
-        self.grid = [[0] + row[:-1] for row in self.grid]
+        self.grid = [row[:-1] + [0] for row in self.grid]
+
+
