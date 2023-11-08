@@ -9,6 +9,13 @@ class Grid:
         self.grid = [[0 for j in range(self.num_cols)] for i in range(self.num_rows)]
         self.colors = Colors.get_cell_colors()
 
+    def __str__(self):
+        grid_str = ""
+        for row in self.grid:
+            grid_str += " ".join(map(str, row)) + "\n"
+        return grid_str
+
+
     def print_grid(self):
         for row in range(self.num_rows):
             for column in range(self.num_cols):
