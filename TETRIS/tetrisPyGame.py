@@ -45,9 +45,11 @@ while True:
                 game.move_right()
             if event.key == pygame.K_DOWN and not game.game_over:
                 game.move_down()
-                game.update_score(0, 1)
+            game.update_score(0, 1)
             if event.key == pygame.K_UP and not game.game_over:
                 game.rotate()
+            if event.key == pygame.K_SPACE  and not game.game_over:
+                game.drop_block()
         if event.type == GAME_UPDATE and not game.game_over:
             game.move_down()
 

@@ -29,7 +29,7 @@ class Game:
         block = random.choice(self.blocks)
         self.blocks.remove(block)
         return block
-    
+
     def move_left(self):
         self.current_block.move(0, -1)
         if self.block_inside() == False or self.block_fits() == False:
@@ -45,6 +45,12 @@ class Game:
         if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(-1, 0)
             self.lock_block()
+
+    def drop_block(self):
+        while self.block_inside() and self.block_fits():
+            self.current_block.move(1, 0)
+        self.current_block.move(-1, 0)
+        self.lock_block()
 
     def lock_block(self):
         tiles = self.current_block.get_cell_positions()
@@ -63,7 +69,6 @@ class Game:
         self.current_block = self.get_random_block()
         self.next_block = self.get_random_block()
         self.score = 0
-
 
     def block_fits(self):
         tiles = self.current_block.get_cell_positions()

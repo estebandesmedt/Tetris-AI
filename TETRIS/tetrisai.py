@@ -1,12 +1,13 @@
 from game import Game
 import copy
+import random
 
 class TetrisAI:
     def __init__(self):
         # Define the parameters for the heuristic function
         self.a = -1 #height
         self.b = 2 #lines
-        self.c = -1 #holes
+        self.c = -10 #holes
         self.d = -1 #bumpiness
 
     def get_best_move(self, current_piece, grid, next_piece):
@@ -15,13 +16,12 @@ class TetrisAI:
 
         for rotation in range(4):
             for x in range(-5, 6):
-                print(rotation, x)
                 temp_game = Game()
                 
                 # Make a deep copy of the grid and other relevant game state
                 temp_game.grid.grid = [row[:] for row in copy.deepcopy(grid.grid)]
                 # Optionally, you can copy other state variables as well
-                
+
                 for _ in range(rotation):
                     temp_game.rotate()
                 if x < 0:
@@ -36,22 +36,27 @@ class TetrisAI:
                     best_score = score
                     best_move = (rotation, x)
         
-        print(temp_game.grid)  # This will show the grid state for each move
+                # Reset the game state to the original state for the next iteration
+                temp_game = Game()
+                temp_game.grid.grid = [row[:] for row in copy.deepcopy(grid.grid)]
+        print(temp_game.grid)
         print("Best Move:", best_move)
         return best_move
+
 
     def calculate_score(self, grid, current_piece, next_piece):
         aggregate_height = self.calculate_aggregate_height(grid)
         complete_lines = self.calculate_complete_lines(grid)
         holes = self.calculate_holes(grid)
         bumpiness = self.calculate_bumpiness(grid)
-
+        
         score = (
             self.a * aggregate_height +
             self.b * complete_lines +
             self.c * holes +
             self.d * bumpiness
         )
+
         print("Score:", score)
         return score
 
@@ -106,3 +111,5 @@ class TetrisAI:
             bumpiness += abs(heights[i] - heights[i + 1])
         print("bump", bumpiness)
         return bumpiness
+    
+    
