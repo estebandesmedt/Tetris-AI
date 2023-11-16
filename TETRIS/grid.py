@@ -22,6 +22,15 @@ class Grid:
                 print(self.grid[row][column], end = " ")
             print()
 
+    def clone(self):
+        new_grid = Grid()
+        new_grid.num_rows = self.num_rows
+        new_grid.num_cols = self.num_cols
+        new_grid.cell_size = self.cell_size
+        new_grid.grid = [row[:] for row in self.grid]  # Create a deep copy of the grid
+        new_grid.colors = self.colors.copy()
+        return new_grid
+
     def is_inside(self, row, column):
         if row >= 0 and row < self.num_rows and column >= 0 and column < self.num_cols:
             return True

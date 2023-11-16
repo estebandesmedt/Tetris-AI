@@ -24,6 +24,16 @@ class Block:
             moved_tiles.append(position)
         return moved_tiles
     
+    def clone(self):
+        new_block = Block(self.id)
+        new_block.cells = self.cells.copy()
+        new_block.cell_size = self.cell_size
+        new_block.row_offset = self.row_offset
+        new_block.column_offset = self.column_offset
+        new_block.rotation_state = self.rotation_state
+        new_block.colors = self.colors.copy()
+        return new_block
+    
     def rotate(self):
         self.rotation_state += 1
         if self.rotation_state == len(self.cells):

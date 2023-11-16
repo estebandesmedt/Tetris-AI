@@ -35,6 +35,22 @@ class Game:
         if self.block_inside() == False or self.block_fits() == False:
             self.current_block.move(0, 1)
 
+    def move_to_left_side(self):
+        while self.block_inside() and self.block_fits():
+            self.current_block.move(0, -1)
+
+        # If the block is now outside the grid or doesn't fit, move it back to the right
+        if not self.block_inside() or not self.block_fits():
+            self.current_block.move(0, 1)
+
+    def move_to_right_side(self):
+        while self.block_inside() and self.block_fits():
+            self.current_block.move(0, 1)
+
+        # If the block is now outside the grid or doesn't fit, move it back to the right
+        if not self.block_inside() or not self.block_fits():
+            self.current_block.move(0, -1)
+
     def move_right(self):
         self.current_block.move(0, 1)
         if self.block_inside() == False or self.block_fits() == False:

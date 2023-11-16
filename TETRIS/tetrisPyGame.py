@@ -2,7 +2,6 @@ import pygame, sys
 import time
 from game import Game
 from colors import Colors
-from grid import Grid
 from tetrisai import TetrisAI
 
 pygame.init()
