@@ -54,7 +54,7 @@ while True:
             game.move_down()
 
     # Calculate AI's move
-    best_move = tetris_ai.get_best_move(game.current_block, game.grid, game.next_block)
+    best_move = tetris_ai.get_best_move(game.current_block, game.grid)
     if best_move is not None:
         rotation, x = best_move
         for _ in range(rotation):
@@ -70,7 +70,7 @@ while True:
     current_piece = game.current_block
     next_piece = game.next_block
 
-    best_move = tetris_ai.get_best_move(current_piece, game.grid, next_piece)
+    best_move = tetris_ai.get_best_move(current_piece, game.grid)
     score_value_surface = title_font.render(str(game.score), True, Colors.white)
 
     screen.fill(Colors.dark_blue)
