@@ -11,6 +11,7 @@ title_font = pygame.font.Font(None, 40)
 score_surface = title_font.render("Score", True, Colors.white)
 next_surface = title_font.render("Next", True, Colors.white)
 game_over_surface = title_font.render("GAME OVER", True, Colors.white)
+paused_surface = title_font.render("PAUSED", True, Colors.white)
 
 score_rect = pygame.Rect(320, 55, 170, 60)
 next_rect = pygame.Rect(320, 215, 170, 180)
@@ -26,6 +27,8 @@ tetris_ai = TetrisAI(game)
 GAME_UPDATE = pygame.USEREVENT
 GAME_SPEED = 200
 pygame.time.set_timer(GAME_UPDATE, GAME_SPEED)
+
+paused = False
 
 while True:
     elapsed_time = time.time() - start_time
@@ -49,12 +52,13 @@ while True:
                 game.rotate()
             if event.key == pygame.K_SPACE and not game.game_over:
                 game.drop_block()
-        if event.type == GAME_UPDATE and not game.game_over:
+            if event.key == pygame.K_p:
+                paused = not paused  # Toggle pause state
+        if event.type == GAME_UPDATE and not game.game_over and not paused:
             game.move_down()
-        if not game.game_over:
+        if not game.game_over and not paused:
             tetris_ai.make_best_move()
-            game.update()  
-
+            game.update()
 
     # Continue with game logic
     current_piece = game.current_block
@@ -67,6 +71,8 @@ while True:
 
     if game.game_over:
         screen.blit(game_over_surface, (320, 450, 50, 50))
+    elif paused:
+        screen.blit(paused_surface, (320, 450, 50, 50))
 
     pygame.draw.rect(screen, Colors.light_blue, score_rect, 0, 10)
     screen.blit(score_value_surface,
