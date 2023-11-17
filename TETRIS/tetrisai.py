@@ -1,145 +1,84 @@
-from game import Game
-from blocks import *
 import copy
-import random
 
 class TetrisAI:
-    def __init__(self):
-        self.a = -10 #height
-        self.b = 1 #lines
-        self.c = -1 #holes
-        self.d = -1 #bumpiness
+    def __init__(self, tetris):
+        self.tetris = tetris  
+        self.height_multiplier = 2.0  # Adjust the multiplier as needed
+        self.lines_cleared_multiplier = 1.0  # Adjust the multiplier as needed
+        self.holes_multiplier = 1.0
 
-    def get_best_move(self, current_piece, grid):
+    def evaluate_board(self, board):
+            height_penalty = self.calculate_height_penalty(board)
+            lines_cleared_bonus = self.calculate_lines_cleared_bonus(board)
+            holes_penalty = self.calculate_holes_penalty(board)
+
+            # Apply multipliers to each component
+            height_score = height_penalty * self.height_multiplier
+            lines_score = lines_cleared_bonus * self.lines_cleared_multiplier
+            holes_score = holes_penalty * self.holes_multiplier
+
+            # Combine the three components into an overall score
+            total_score = height_score + lines_score + holes_score
+
+            return total_score
+    
+    def calculate_height_penalty(self, board):
+        # Penalize higher columns to encourage a lower stack
+        max_height = max([max(column) for column in zip(*board)])
+        return -max_height
+
+    def calculate_lines_cleared_bonus(self, board):
+        # Provide a bonus for cleared lines to encourage clearing lines
+        lines_cleared = sum([1 for row in board if all(cell != 0 for cell in row)])
+        return lines_cleared * 100  # Adjust the multiplier as needed
+
+    def calculate_holes_penalty(self, board):
+        # Penalize the number of holes in the stack
+        holes = 0
+        for col in zip(*board):
+            hole_found = False
+            for cell in col:
+                if cell == 0 and hole_found:
+                    holes += 1
+                elif cell != 0:
+                    hole_found = True
+        return -holes
+
+    def get_possible_moves(self):
+        # Generate all possible moves (rotations and translations) for the current piece
+        possible_moves = []
+
+        for rotation in range(4):
+            for column in range(-5, 6):
+                move = {'rotation': rotation, 'column': column}
+                possible_moves.append(move)
+
+        return possible_moves
+
+    def calculate_best_move(self):
         best_move = None
         best_score = float('-inf')
 
-        for rotation in range(4):
-            for x_col in range(-3, 8):
-                temp_game = Game()
-                temp_game.grid.grid = [row[:] for row in copy.deepcopy(grid.grid)]
-                temp_game.current_block = copy.deepcopy(current_piece)  # Set the current block
+        # Iterate through all possible moves
+        for move in self.get_possible_moves():
+            # Create a deep copy of the current game state to simulate the move
+            simulated_tetris = copy.deepcopy(self.tetris)
 
-                rotated_piece = copy.deepcopy(current_piece)
-                for _ in range(rotation):
-                    rotated_piece.rotate()
+            # Apply the move to the simulated game state
+            simulated_tetris.apply_move(move)
 
-                temp_game.move_to_left_side()
-                rotated_piece.move(0, x_col)
+            # Evaluate the new game state
+            score = self.evaluate_board(simulated_tetris.get_board())
 
-                if temp_game.block_fits():  # Check if the block fits in the current position
-                    max_row_index = max(position.row for position in rotated_piece.get_cell_positions())
-                    row_offset = temp_game.grid.num_rows - max_row_index - 1
-                    
-                    for position in rotated_piece.get_cell_positions():
-                        row_index = row_offset + position.row
-                        col_index = position.column
+            # Update the best move if the new score is better
+            if score > best_score:
+                best_score = score
+                best_move = move
 
-                        if 0 <= row_index < temp_game.grid.num_rows and 0 <= col_index < temp_game.grid.num_cols:
-                            temp_game.grid.grid[row_index][col_index] = rotated_piece.id
-
-                    # Calculate the score for the current placement
-                    score = self.calculate_score(temp_game.grid, rotated_piece)
-
-                    if score > best_score:
-                        best_score = score
-                        best_move = (rotation, x_col)
-
-        # print(temp_game.grid)
-        # print("Best Move:", best_move)
-        # best_move = (random.randint(0,4), random.randint(-5,6))
         return best_move
 
-    def calculate_score(self, grid, current_piece):
-        aggregate_height = self.calculate_aggregate_height(grid)
-        complete_lines = self.calculate_complete_lines(grid)
-        holes = self.calculate_holes(grid)
-        bumpiness = self.calculate_bumpiness(grid)
+    def make_best_move(self):
+        # Get the best move and apply it to the actual game state
+        best_move = self.calculate_best_move()
+        self.tetris.apply_move(best_move)
 
-        score = (
-            self.a * aggregate_height +
-            self.b * complete_lines +
-            self.c * holes +
-            self.d * bumpiness
-        )
-
-        print("Score:", score)
-        return score
-
-    # def calculate_aggregate_height(self, grid):
-    #     aggregate_height = 0
-    #     heights = [0] * grid.num_cols
-
-    #     for col in range(grid.num_cols):
-    #         for row in range(grid.num_rows):
-    #             if grid.grid[row][col] != 0:
-    #                 heights[col] = grid.num_rows - row
-    #                 break
-
-    #     aggregate_height = sum(heights)
-    #     print(grid)
-    #     print("agg", aggregate_height)
-    #     return aggregate_height
-    
-    def calculate_aggregate_height(self, grid):
-        max_height = 0
-        heights = [0] * grid.num_cols
-
-        for col in range(grid.num_cols):
-            for row in range(grid.num_rows):
-                if grid.grid[row][col] != 0:
-                    heights[col] = grid.num_rows - row
-                    break
-        max_height = max(heights)
-        print(grid)
-        # print("max height:", max_height)
-        return max_height
-
-    def calculate_complete_lines(self, grid):
-        completed_lines = 0
-        for row in range(grid.num_rows):
-            if all(cell != 0 for cell in grid.grid[row]):
-                completed_lines += 1
-        # print("lines", completed_lines)
-        if(completed_lines == 1):
-            completed_lines_score = 1
-        if(completed_lines == 2):
-            completed_lines_score = 3
-        if(completed_lines == 3):
-            completed_lines_score = 5
-        if(completed_lines == 4):
-            completed_lines_score = 15
-
-        return completed_lines_score
-
-    def calculate_holes(self, grid):
-        height = grid.num_rows
-        width = grid.num_cols
-        holes = 0
-
-        for col in range(width):
-            hole_found = False
-            for row in range(height):
-                if grid.grid[row][col] == 0:
-                    hole_found = True
-                elif grid.grid[row][col] == 1 and hole_found:
-                    holes += 1
-        # print("holes", holes)
-        return holes
-
-    def calculate_bumpiness(self, grid):
-        bumpiness = 0
-        heights = [0] * grid.num_cols
-
-        for col in range(grid.num_cols):
-            for row in range(grid.num_rows):
-                if grid.grid[row][col] != 0:
-                    heights[col] = grid.num_rows - row
-                    break
-
-        for i in range(grid.num_cols - 1):
-            bumpiness += abs(heights[i] - heights[i + 1])
-        # print("bump", bumpiness)
-        return bumpiness
-    
-    

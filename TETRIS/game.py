@@ -14,6 +14,39 @@ class Game:
         # pygame.mixer.music.load("Sounds/music.ogg")
         # pygame.mixer.music.play(-1)
 
+    def apply_best_move(self, move):
+        if move == "left" and not self.game_over:
+            self.move_left()
+        elif move == "right" and not self.game_over:
+            self.move_right()
+        elif move == "down" and not self.game_over:
+            self.move_down()
+        elif move == "rotate" and not self.game_over:
+            self.rotate()
+        elif move == "drop" and not self.game_over:
+            self.drop_block()
+
+    def apply_move(self, move):
+        # Apply the specified move to the current block
+        if move['rotation'] > 0:
+            for _ in range(move['rotation']):
+                self.rotate()
+
+        if move['column'] < 0:
+            for _ in range(abs(move['column'])):
+                self.move_left()
+        elif move['column'] > 0:
+            for _ in range(move['column']):
+                self.move_right()
+        self.drop_block()
+
+    def get_board(self):
+        return self.grid.grid
+    
+    def update(self):
+        if not self.game_over:
+            self.move_down()
+
     def update_score(self, lines_cleared, move_down_points):
         if lines_cleared == 1:
             self.score += 100
