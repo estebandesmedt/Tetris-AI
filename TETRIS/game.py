@@ -138,13 +138,13 @@ class Game:
                 return False
         return True
     
-    def draw(self, screen):
-        self.grid.draw(screen)
-        self.current_block.draw(screen, 11, 11)
+    def draw(self, screen, x_offset=0):
+        self.grid.draw(screen, x_offset)
+        self.current_block.draw(screen, 11 + x_offset, 11)
         
         if self.next_block.id == 3:
-            self.next_block.draw(screen, 255, 290)
+            self.next_block.draw(screen, 255 + x_offset, 290)
         elif self.next_block.id == 4:
-            self.next_block.draw(screen, 255, 280)
-        else: 
-            self.next_block.draw(screen, 270, 270)
+            self.next_block.draw(screen, 255 + x_offset, 280)
+        else:
+            self.next_block.draw(screen, 270 + x_offset, 270)
