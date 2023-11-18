@@ -3,10 +3,10 @@ import copy
 class TetrisAI:
     def __init__(self, tetris):
         self.tetris = tetris  
-        self.height_multiplier = 0.1
-        self.lines_cleared_multiplier = 1
-        self.holes_multiplier = 0.1
-        self.bumpiness_multiplier = 0.1
+        self.height_multiplier = 1
+        self.lines_cleared_multiplier = 0.1
+        self.holes_multiplier = 1.2
+        self.bumpiness_multiplier = 0.2
 
     def evaluate_board(self, board):
         height_penalty = self.calculate_height_penalty(board)
@@ -26,15 +26,26 @@ class TetrisAI:
         return total_score
     
     def calculate_height_penalty(self, board):
-        # Penalize higher columns to encourage a lower stack
-        max_height = max([max(column) for column in zip(*board)])
-        print(max_height)
+        max_height = 0
+        heights = [0] * len(board[0])  # Assuming board is a list of lists with equal column lengths
+        for col in range(len(board[0])):
+            for row in range(len(board)):
+                if board[row][col] != 0:
+                    heights[col] = len(board) - row
+                    break
+        max_height = max(heights)
+        # print(max_height)
         return -max_height
 
     def calculate_lines_cleared_bonus(self, board):
-        # Provide a bonus for cleared lines to encourage clearing lines
-        lines_cleared = sum([1 for row in board if all(cell != 0 for cell in row)])
-        return lines_cleared
+        lines = 0
+        for row in zip(*board):
+            for cell in row:
+                if all(cell != 0 for cell in row):
+                    lines += 1
+        print(lines)
+        return lines
+
     
     def calculate_holes_penalty(self, board):
         # Penalize the number of holes in the stack
@@ -46,13 +57,14 @@ class TetrisAI:
                     holes += 1
                 elif cell != 0:
                     hole_found = True
-        print(holes)
+        # print(holes)
         return -holes
 
     def calculate_bumpiness_penalty(self, board):
         # Penalize the difference in height between adjacent columns to reduce bumpiness
         column_heights = [max(column) for column in zip(*board)]
         bumpiness = sum(abs(column_heights[i] - column_heights[i + 1]) for i in range(len(column_heights) - 1))
+        # print(bumpiness)
         return -bumpiness
 
     def get_possible_moves(self):
@@ -85,7 +97,7 @@ class TetrisAI:
             if score > best_score:
                 best_score = score
                 best_move = move
-
+        # print(best_move)
         return best_move
 
     def make_best_move(self):

@@ -14,10 +14,10 @@ next_surface = title_font.render("Next", True, Colors.white)
 game_over_surface = title_font.render("GAME OVER", True, Colors.white)
 paused_surface = title_font.render("PAUSED", True, Colors.white)
 
-#player1
+# player1
 score_rect = pygame.Rect(320, 55, 170, 60)
 next_rect = pygame.Rect(320, 215, 170, 180)
-#player2
+# player2
 score_rect2 = pygame.Rect(820, 55, 170, 60)
 next_rect2 = pygame.Rect(820, 215, 170, 180)
 
@@ -101,8 +101,8 @@ while True:
                         "\nLines : " + str(tetris_ai.lines_cleared_multiplier) +
                         "\nHoles : " + str(tetris_ai.holes_multiplier) +
                         "\nBumps : " + str(tetris_ai.bumpiness_multiplier) +
-                        "\nScore :" + str(gameAI.score) + "\n" +
-                        "----------------------------------------\n")
+                        "\nScore :" + str(gameAI.score) +
+                        "\n----------------------------------------\n")
                 added = True
     elif paused:
         screen.blit(paused_surface, (850, 450, 50, 50))
@@ -117,7 +117,6 @@ while True:
     pygame.draw.rect(screen, Colors.light_blue, next_rect2, 0, 10)
     gamePlayer.draw(screen, x_offset=0)
     gameAI.draw(screen, x_offset=500)
-
 
     pygame.display.update()
     clock.tick(60)

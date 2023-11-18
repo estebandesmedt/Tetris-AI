@@ -11,6 +11,7 @@ class Game:
         self.next_block = self.get_random_block()
         self.game_over = False
         self.score = 0
+        self.score_added = False
         # pygame.mixer.music.load("Sounds/music.ogg")
         # pygame.mixer.music.play(-1)
 
