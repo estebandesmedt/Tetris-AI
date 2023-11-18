@@ -3,10 +3,10 @@ import copy
 class TetrisAI:
     def __init__(self, tetris):
         self.tetris = tetris  
-        self.height_multiplier = 1
+        self.height_multiplier = 1.2
         self.lines_cleared_multiplier = 0.1
-        self.holes_multiplier = 1.2
-        self.bumpiness_multiplier = 0.2
+        self.holes_multiplier = 1
+        self.bumpiness_multiplier = 0.3
 
     def evaluate_board(self, board):
         height_penalty = self.calculate_height_penalty(board)

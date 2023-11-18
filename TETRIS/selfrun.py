@@ -14,10 +14,10 @@ next_surface = title_font.render("Next", True, Colors.white)
 game_over_surface = title_font.render("GAME OVER", True, Colors.white)
 paused_surface = title_font.render("PAUSED", True, Colors.white)
 
-# player1
+#player1
 score_rect = pygame.Rect(320, 55, 170, 60)
 next_rect = pygame.Rect(320, 215, 170, 180)
-# player2
+#player2
 score_rect2 = pygame.Rect(820, 55, 170, 60)
 next_rect2 = pygame.Rect(820, 215, 170, 180)
 
@@ -37,6 +37,9 @@ added = False
 
 paused = False
 
+# Constants
+RESTART_DELAY = 3  # 3 seconds delay before automatic restart
+
 while True:
     elapsed_time = time.time() - start_time
 
@@ -45,7 +48,7 @@ while True:
             pygame.quit()
             sys.exit()
         if event.type == pygame.KEYDOWN:
-            if gamePlayer.game_over:
+            if gamePlayer.game_over and gameAI.game_over:
                 added = False
                 gamePlayer.game_over = False
                 gamePlayer.reset()
@@ -84,28 +87,33 @@ while True:
     screen.blit(score_surface, (860, 20, 50, 50))
     screen.blit(next_surface, (870, 180, 50, 50))
 
-    if gamePlayer.game_over:
+    if gameAI.game_over:
+            screen.blit(game_over_surface, (820, 450, 50, 50))
+            file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "ai_score.txt")
+
+            # Your existing code to check if data is added
+            if not added:
+                with open(file_path, "a") as f:
+                    f.write("----------------------------------------" +
+                            "\nHeight: " + str(tetris_ai.height_multiplier) +
+                            "\nLines : " + str(tetris_ai.lines_cleared_multiplier) +
+                            "\nHoles : " + str(tetris_ai.holes_multiplier) +
+                            "\nBumps : " + str(tetris_ai.bumpiness_multiplier) +
+                            "\nScore :" + str(gameAI.score) +
+                            "\n----------------------------------------\n")
+                    added = True
+
+    if gamePlayer.game_over and gameAI.game_over:
         screen.blit(game_over_surface, (320, 450, 50, 50))
+        if elapsed_time > RESTART_DELAY:
+            added = False
+            gamePlayer.game_over = False
+            gamePlayer.reset()
+            gameAI.game_over = False
+            gameAI.reset()
+            start_time = time.time()  # Reset the start time after restart
     elif paused:
         screen.blit(paused_surface, (350, 450, 50, 50))
-
-    if gameAI.game_over:
-        screen.blit(game_over_surface, (820, 450, 50, 50))
-        file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "ai_score.txt")
-
-        # Your existing code to check if data is added
-        if not added:
-            with open(file_path, "a") as f:
-                f.write("----------------------------------------" +
-                        "\nHeight: " + str(tetris_ai.height_multiplier) +
-                        "\nLines : " + str(tetris_ai.lines_cleared_multiplier) +
-                        "\nHoles : " + str(tetris_ai.holes_multiplier) +
-                        "\nBumps : " + str(tetris_ai.bumpiness_multiplier) +
-                        "\nScore :" + str(gameAI.score) +
-                        "\n----------------------------------------\n")
-                added = True
-    elif paused:
-        screen.blit(paused_surface, (850, 450, 50, 50))
 
     pygame.draw.rect(screen, Colors.light_blue, score_rect, 0, 10)
     screen.blit(score_value_surface,
