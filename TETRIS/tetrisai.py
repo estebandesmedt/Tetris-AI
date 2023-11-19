@@ -4,8 +4,8 @@ import random
 class TetrisAI:
     def __init__(self, tetris):
         self.tetris = tetris  
-        self.height_multiplier = 1
-        self.holes_multiplier = 1
+        self.height_multiplier = 0.91
+        self.holes_multiplier = 0.9
         self.lines_cleared_multiplier = 0.1
         self.bumpiness_multiplier = 0.1
 
@@ -15,9 +15,9 @@ class TetrisAI:
     def mutation(self):
             mutation_range = 0.1
 
-            self.height_multiplier = max(0.9, min(1.1, round(self.height_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.height_multiplier = max(0.5, min(2, round(self.height_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
             self.lines_cleared_multiplier = max(0.5, min(2.5, round(self.lines_cleared_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
-            self.holes_multiplier = max(0.9, min(1.1, round(self.holes_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.holes_multiplier = max(0.5, min(2, round(self.holes_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
             self.bumpiness_multiplier = max(0.01, min(0.2, round(self.bumpiness_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
 
 
