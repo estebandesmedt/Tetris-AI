@@ -139,6 +139,9 @@ class Game:
                 return False
         return True
     
+    def add_grey(self):
+        self.grid.move_up_and_add_row()
+    
     def draw(self, screen, x_offset=0):
         self.grid.draw(screen, x_offset)
         self.current_block.draw(screen, 11 + x_offset, 11)

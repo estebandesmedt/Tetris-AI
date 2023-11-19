@@ -4,8 +4,8 @@ import random
 class TetrisAI:
     def __init__(self, tetris):
         self.tetris = tetris  
-        self.height_multiplier = 0.93
-        self.holes_multiplier = 0.95
+        self.height_multiplier = 1
+        self.holes_multiplier = 1
         self.lines_cleared_multiplier = 0.1
         self.bumpiness_multiplier = 0.1
 
@@ -15,10 +15,10 @@ class TetrisAI:
     def mutation(self):
             mutation_range = 0.1
 
-            self.height_multiplier = max(0.5, min(2.5, round(self.height_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.height_multiplier = max(0.9, min(1.1, round(self.height_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
             self.lines_cleared_multiplier = max(0.5, min(2.5, round(self.lines_cleared_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
-            self.holes_multiplier = max(0.5, min(2.5, round(self.holes_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
-            self.bumpiness_multiplier = max(0.5, min(2.5, round(self.bumpiness_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.holes_multiplier = max(0.9, min(1.1, round(self.holes_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.bumpiness_multiplier = max(0.01, min(0.2, round(self.bumpiness_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
 
 
     def evaluate_board(self, board):
@@ -95,25 +95,31 @@ class TetrisAI:
         best_move = None
         best_score = float('-inf')
 
-        # Iterate through all possible moves
         for move in self.get_possible_moves():
-            # Create a deep copy of the current game state to simulate the move
             simulated_tetris = copy.deepcopy(self.tetris)
 
-            # Apply the move to the simulated game state
             simulated_tetris.apply_move(move)
 
-            # Evaluate the new game state
             score = self.evaluate_board(simulated_tetris.get_board())
 
-            # Update the best move if the new score is better
             if score > best_score:
                 best_score = score
                 best_move = move
         # print(best_move)
         return best_move
-
+    
     def make_best_move(self):
-        # Get the best move and apply it to the actual game state
         best_move = self.calculate_best_move()
         self.tetris.apply_move(best_move)
+
+    #Genetic functions
+    def apply_move(self, move):
+        self.tetris.apply_move(move)
+
+    def get_board(self):
+        return self.tetris.get_board()
+    
+    def draw(self, screen, x_offset=0):
+        self.tetris.draw(screen, x_offset)
+
+

@@ -99,6 +99,10 @@ while True:
                             "\nScore :" + str(gameAI.score) +
                             "\n----------------------------------------\n")
                     added = True
+                    i += 1
+                    print(i)
+                    if i%10 == 0:
+                        tetris_ai.mutation()
 
     if gamePlayer.game_over and gameAI.game_over:
         screen.blit(game_over_surface, (320, 450, 50, 50))

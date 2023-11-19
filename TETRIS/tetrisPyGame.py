@@ -40,7 +40,6 @@ tetris_ai.mutation()
 
 while True:
     elapsed_time = time.time() - start_time
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()

@@ -8,6 +8,7 @@ class Colors:
     cyan = (21, 204, 209)
     blue = (13, 64, 216)
     white = (255, 255, 255)
+    black = (0, 0, 0)
     dark_blue = (44,44,127)
     light_blue = (29, 85, 162)
 
