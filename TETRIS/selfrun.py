@@ -36,13 +36,11 @@ pygame.time.set_timer(GAME_UPDATE, GAME_SPEED)
 added = False
 
 paused = False
-
-# Constants
-RESTART_DELAY = 3  # 3 seconds delay before automatic restart
+RESTART_DELAY = 3
+i = 0
 
 while True:
     elapsed_time = time.time() - start_time
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -90,7 +88,6 @@ while True:
     if gameAI.game_over:
             screen.blit(game_over_surface, (820, 450, 50, 50))
             file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "ai_score.txt")
-
             # Your existing code to check if data is added
             if not added:
                 with open(file_path, "a") as f:

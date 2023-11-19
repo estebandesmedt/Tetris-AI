@@ -36,6 +36,7 @@ pygame.time.set_timer(GAME_UPDATE, GAME_SPEED)
 added = False
 
 paused = False
+tetris_ai.mutation()
 
 while True:
     elapsed_time = time.time() - start_time

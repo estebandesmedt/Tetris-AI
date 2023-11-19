@@ -1,12 +1,25 @@
 import copy
+import random
 
 class TetrisAI:
     def __init__(self, tetris):
         self.tetris = tetris  
-        self.height_multiplier = 1.2
+        self.height_multiplier = 0.93
+        self.holes_multiplier = 0.95
         self.lines_cleared_multiplier = 0.1
-        self.holes_multiplier = 1
-        self.bumpiness_multiplier = 0.3
+        self.bumpiness_multiplier = 0.1
+
+    def reset(self):
+        self.tetris.reset()
+
+    def mutation(self):
+            mutation_range = 0.1
+
+            self.height_multiplier = max(0.5, min(2.5, round(self.height_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.lines_cleared_multiplier = max(0.5, min(2.5, round(self.lines_cleared_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.holes_multiplier = max(0.5, min(2.5, round(self.holes_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.bumpiness_multiplier = max(0.5, min(2.5, round(self.bumpiness_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+
 
     def evaluate_board(self, board):
         height_penalty = self.calculate_height_penalty(board)
@@ -43,7 +56,7 @@ class TetrisAI:
             for cell in row:
                 if all(cell != 0 for cell in row):
                     lines += 1
-        print(lines)
+        # print(lines)
         return lines
 
     
