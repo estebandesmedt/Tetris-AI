@@ -62,19 +62,6 @@ class Grid:
             self.grid[row - num_rows][column] = self.grid[row][column]
             self.grid[row][column] = 0
 
-    def add_random_empty_row(self):
-        new_row = [8] * self.num_cols
-
-        empty_column = random.randint(0, self.num_cols - 1)
-        new_row[empty_column] = 0  
-        for row in range(self.num_rows - 1, 0, -1):
-            self.grid[row] = self.grid[row - 1][:]
-        self.grid[0] = new_row
-
-    def move_up_and_add_row(self):
-        self.move_row_up(0, 1)
-        self.add_random_empty_row()
-        self.grid[0] = [0] * self.num_cols
 
     def clear_full_rows(self):
         completed = 0

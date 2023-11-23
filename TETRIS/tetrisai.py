@@ -53,12 +53,10 @@ class TetrisAI:
     def calculate_lines_cleared_bonus(self, board):
         lines = 0
         for row in zip(*board):
-            for cell in row:
-                if all(cell != 0 for cell in row):
-                    lines += 1
+            if all(cell != 0 for cell in row):
+                lines += 1
         # print(lines)
         return lines
-
     
     def calculate_holes_penalty(self, board):
         # Penalize the number of holes in the stack
