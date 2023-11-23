@@ -185,9 +185,9 @@ while True:
     pygame.draw.rect(screen, Colors.light_blue, next_rect2, 0, 10)
     pygame.draw.rect(screen, Colors.light_blue, next_rect3, 0, 10)
 
-    gameAI1.draw(screen, x_offset=ratio*0)
-    gameAI2.draw(screen, x_offset=ratio*500)
-    gameAI3.draw(screen, x_offset=ratio*1000)
+    gameAI1.draw(screen, x_offset=ratio*0, custom_cell_size=custom_cell_size, ratio=ratio)
+    gameAI2.draw(screen, x_offset=ratio*500, custom_cell_size=custom_cell_size, ratio=ratio)
+    gameAI3.draw(screen, x_offset=ratio*1000, custom_cell_size=custom_cell_size, ratio=ratio)
 
     pygame.display.update()
     clock.tick(60)
