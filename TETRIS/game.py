@@ -12,6 +12,7 @@ class Game:
         self.game_over = False
         self.score = 0
         self.score_added = False
+        self.clearedLines = 0
         # pygame.mixer.music.load("Sounds/music.ogg")
         # pygame.mixer.music.play(-1)
 
@@ -49,6 +50,7 @@ class Game:
             self.move_down()
 
     def update_score(self, lines_cleared, move_down_points):
+        self.clearedLines = lines_cleared
         if lines_cleared == 1:
             self.score += 100
         elif lines_cleared == 2:
@@ -58,6 +60,9 @@ class Game:
         elif lines_cleared == 4:
             self.score += 800
         self.score += move_down_points
+
+    def resetLinesCleared(self):
+        self.clearedLines = 0
 
     def get_random_block(self):
         if len(self.blocks) == 0:

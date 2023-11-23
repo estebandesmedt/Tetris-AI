@@ -74,3 +74,20 @@ class ZBlock(Block):
             3: [Position(0, 1), Position(1, 0), Position(1,1), Position(2, 0)]
         }
         self.move(0,3)
+
+class GreyBlock(Block):
+    def __init__(self):
+        super().__init__(id = 8)
+        self.cells = {
+            0: [Position(0, 1), Position(0,2), Position(0, 3), Position(0, 4), Position(0,5), Position(0, 6), Position(0, 7), Position(0, 8), Position(0, 9)],
+            1: [Position(0, 0), Position(0,2), Position(0, 3), Position(0, 4), Position(0,5), Position(0, 6), Position(0, 7), Position(0, 8), Position(0, 9)],
+            2: [Position(0, 0), Position(0,1), Position(0, 3), Position(0, 4), Position(0,5), Position(0, 6), Position(0, 7), Position(0, 8), Position(0, 9)],
+            3: [Position(0, 0), Position(0,1), Position(0, 2), Position(0, 4), Position(0,5), Position(0, 6), Position(0, 7), Position(0, 8), Position(0, 9)],
+            4: [Position(0, 0), Position(0,1), Position(0, 2), Position(0, 3), Position(0,5), Position(0, 6), Position(0, 7), Position(0, 8), Position(0, 9)],
+            5: [Position(0, 0), Position(0,1), Position(0, 2), Position(0, 3), Position(0, 4), Position(0, 6), Position(0, 7), Position(0, 8), Position(0, 9)],
+            6: [Position(0, 0), Position(0,1), Position(0, 2), Position(0, 3), Position(0, 4), Position(0, 5), Position(0, 7), Position(0, 8), Position(0, 9)],
+            7: [Position(0, 0), Position(0,1), Position(0, 2), Position(0, 3), Position(0, 4), Position(0, 5), Position(0, 6), Position(0, 8), Position(0, 9)],
+            8: [Position(0, 0), Position(0,1), Position(0, 2), Position(0, 3), Position(0, 4), Position(0, 5), Position(0, 6), Position(0, 7), Position(0, 9)],
+            9: [Position(0, 0), Position(0,1), Position(0, 2), Position(0, 3), Position(0, 4), Position(0, 5), Position(0, 6), Position(0, 7), Position(0, 8)]
+        }
+        self.move(0,0)

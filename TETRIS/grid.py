@@ -62,6 +62,11 @@ class Grid:
             self.grid[row - num_rows][column] = self.grid[row][column]
             self.grid[row][column] = 0
 
+    def grey_row(self, row):
+        empty_column = random.randint(0, self.num_cols - 1)
+        self.grid[row] = [8] * self.num_cols  # Assuming 8 represents a grey block
+        self.grid[row][empty_column] = 0
+
     def add_random_empty_row(self):
         new_row = [8] * self.num_cols
 
