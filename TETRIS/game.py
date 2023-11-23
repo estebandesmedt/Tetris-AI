@@ -4,8 +4,9 @@ import random
 import pygame
 
 class Game:
-    def __init__(self):
+    def __init__(self, cell_size=30):
         self.grid = Grid()
+        self.grid.cell_size = cell_size
         self.blocks = [IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()]
         self.current_block = self.get_random_block()
         self.next_block = self.get_random_block()
