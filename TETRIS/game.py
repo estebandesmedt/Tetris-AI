@@ -150,13 +150,13 @@ class Game:
     def add_grey(self):
         self.grid.move_up_and_add_row()
     
-    def draw(self, screen, x_offset=0, custom_cell_size=30, ratio=0,):
-        var = 115
-        self.grid.draw(screen, x_offset)
-        self.current_block.draw(screen, 11 + x_offset, 11, custom_cell_size)
+    def draw(self, screen, x_offset=0, y_offset=0, custom_cell_size=30, ratio=0):
+            var = 115
+            self.grid.draw(screen, x_offset, y_offset)  
+            self.current_block.draw(screen, 11 + x_offset, 11 + y_offset, custom_cell_size)
 
-        if ratio == 1:
-            var = 0
-        next_block_x = 255 + x_offset-var * ratio
-        next_block_y = 290 * ratio if self.next_block.id == 3 else 280 * ratio
-        self.next_block.draw(screen, next_block_x, next_block_y, custom_cell_size)
+            if ratio == 1:
+                var = 0
+            next_block_x = 255 + x_offset - var * ratio
+            next_block_y = 290 * ratio + y_offset if self.next_block.id == 3 else 280 * ratio + y_offset  
+            self.next_block.draw(screen, next_block_x, next_block_y, custom_cell_size) 
