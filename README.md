@@ -40,6 +40,6 @@ Op deze manier kregen wij data, het ging snel, maar duurde toch nog lang. Daarom
 ## Bibliografie
 - Tetris github: https://github.com/danielchang2002/tetris_ai.git
 - Tutorial basis tetris spel: https://www.youtube.com/watch?v=nF_crEtmpBo
-- AI bot explained guide (no code): https://codemyroad.wordpress.com/2013/04/14/tetris-ai-the-near-perfect-player/
+- AI bot guide (no code): https://codemyroad.wordpress.com/2013/04/14/tetris-ai-the-near-perfect-player/
 
 - TETRIS AI Github (ons project): https://github.com/estebandesmedt/Tetris-AI
