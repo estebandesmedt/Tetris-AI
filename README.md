@@ -6,9 +6,14 @@ De hoofddoelstelling van dit project is het bijleren in verband met AI algoritme
 - [x] Opzoeken en begrijpen wat de beste oplossing voor een tetris AI is
 - [x] In grote lijnen het algoritme in kaart brengen
 - [ ] Extra functionaliteit toevoegen:
-    - [ ]
-- [ ]
-- [ ]
+    - Blok direct volledig naar beneden laten vallen met spatie
+    - 1V1 functionaliteit (grijze rijen bij combo's)
+    - Geluidseffecten
+- [x] Score berekenen voor bepaalde heuristieke waarden (hoogte, gaten, etc...)
+- [x] Heuristiek algoritme implementeren om de beste zet te berekenen
+- [x] De beste zet dan ook uitvoeren
+- [x] Data verzamelen rond de beste vermenigvuldigers voor de heuristieke waarden
+- [ ] Genetisch algoritme invoeren die de beste waarden zoekt/bepaald
 
 ## Probleemstelling
 ## Analyse
