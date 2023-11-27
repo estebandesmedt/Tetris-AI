@@ -1,13 +1,18 @@
 # Tetris-AI
-<h1>Doelstelling(en)</h1>
-<ul>
-    <li>Tetris game</li>
-    <li>Heuristics algorithm with parameters</li>
-    <li>Genetic algorithm to find best parameters</li>
-</ul>
-<h1>Probleemstelling</h1>
-<h1>Analyse</h1>
-<h1>Resultaat</h1>
-<h1>Uitbreiding</h1>
-<h1>Conclusie</h1>
-<h1>Bibliografie</h1>
+## Doelstelling(en)
+De hoofddoelstelling van dit project is het bijleren in verband met AI algoritmen aan de hand van een project die artificiële inteligentie implementeerd. Wij kozen ervoor om de uitdaging aan te gaan om een AI bot te maken die zelf tetris speelt. Om dit te bereiken zijn er een aantal subdoelen die we moeten behalen om dit project tot een goed einde te brengen.
+
+    - Tetris game
+    - Heuristics algorithm with parameters
+    - Genetic algorithm to find best parameters
+
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+
+## Probleemstelling
+## Analyse
+## Resultaat
+## Uitbreiding
+## Conclusie
+## Bibliografie
