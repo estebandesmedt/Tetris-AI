@@ -22,6 +22,7 @@ Onze doelgroep is redelijk breed, bijna iedereen heeft wel al eens tetris gespee
 
 ## Analyse
 Ons project begonnen wij door op zoek te gaan naar soortgelijke projecten, veelal was de implementatie nog te moeilijk voor ons of werd een andere programmeertaal gebruikt. Wij verkozen om alles in python te programmeren en dus niet enkel het algoritme. Uiteindelijk vonden wij één github repository die ons eerst interessant leek, maar waar wij uiteindelijk weinig tot geen inspiratie uit haalden (https://github.com/danielchang2002/tetris_ai.git). Na het bekijken van veel video's in verband met dit onderwerp kwamen we wel tot een idee over hoe we dit best zouden aanpakken. We maakten een tetris game met basis functionaliteit en breidden hier nog wat op uit vooraleer we begonnen aan ons algoritme. Na heel lang zoeken en uiteindelijk een andere aanpak te gebruiken werkte het algoritme (bijna naar behoren). We creëerden een manier om de resultaten van ons algoritme te documenteren met de gebruikte vermenigvuldigers en zorgden voor een manier om deze aan de hand van de behaalde score te ordenen. ![SortedData](./Images/SortedDate.png)
+Op deze manier kregen wij data, het ging snel, maar duurde toch nog lang. Daarom lieten wij er drie tegelijk lopen om zo nog sneller veel iteraties te doorlopen en zo nog sneller de beste vermenigvuldigers te vinden. Uiteindelijk besloten wij zelf om naar tien velden te gaan die simultaan speelden. Dit was met het oog op het genetisch algoritme, maar gaf ons tegelijk ook veel sneller data.
 
 ## Resultaat
 ## Uitbreiding
