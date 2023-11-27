@@ -6,7 +6,7 @@ De hoofddoelstelling van dit project is het bijleren in verband met AI algoritme
 - [x] Opzoeken en begrijpen wat de beste oplossing voor een tetris AI is
 - [x] In grote lijnen het algoritme in kaart brengen
 - [ ] Extra functionaliteit toevoegen:
-        - [ ]
+    - [ ]
 - [ ]
 - [ ]
 
