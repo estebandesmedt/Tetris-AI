@@ -35,20 +35,6 @@ class TetrisAI:
         total_score = height_score + lines_score + holes_score + bumpiness_score
 
         return total_score
-
-    # def crossoverFull(self, Height, Holes):
-    #     Height = self.crossoverHeight(Height)
-    #     Holes = self.crossoverHoles(Holes)
-
-    # def crossoverHeight(self, p2a):
-    #     p1a = self.height_multiplier
-    #     child = (p1a + p2a)/2
-    #     return child
-    
-    # def crossoverHoles(self, p2a):
-    #     p1a = self.holes_multiplier
-    #     child = (p1a + p2a)/2
-    #     return child
     
     def calculate_height_penalty(self, board):
         max_height = 0
@@ -122,5 +108,59 @@ class TetrisAI:
     
     def draw(self, screen, x_offset=0):
         self.tetris.draw(screen, x_offset)
+
+
+#     def crossover(self, other_instance):
+#         height_multiplier = self.crossoverHeight(other_instance.height_multiplier)
+#         holes_multiplier = self.crossoverHoles(other_instance.holes_multiplier)
+#         lines_cleared_multiplier = self.crossoverLines(other_instance.lines_cleared_multiplier)
+#         bumpiness_multiplier = self.crossoverBumpiness(other_instance.bumpiness_multiplier)
+
+#         # Create a new instance with the calculated multipliers
+#         new_instance = TetrisAI(height_multiplier, holes_multiplier, lines_cleared_multiplier, bumpiness_multiplier)
+        
+#         return new_instance
+
+#     def crossoverHeight(self, p2H):
+#         p1H = self.height_multiplier
+#         child_no_mutate = (p1H + p2H) / 2
+#         child = child_no_mutate + random.uniform(-0.1, 0.1)
+#         return child
+
+#     def crossoverHoles(self, p2H):
+#         p1H = self.holes_multiplier
+#         child_no_mutate = (p1H + p2H) / 2
+#         child = child_no_mutate + random.uniform(-0.1, 0.1)
+#         return child
+
+#     def crossoverLines(self, p2H):
+#         p1H = self.lines_cleared_multiplier
+#         child_no_mutate = (p1H + p2H) / 2
+#         child = child_no_mutate + random.uniform(-0.1, 0.1)
+#         return child
+
+#     def crossoverBumpiness(self, p2H):
+#         p1H = self.bumpiness_multiplier
+#         child_no_mutate = (p1H + p2H) / 2
+#         child = child_no_mutate + random.uniform(-0.1, 0.1)
+#         return child
+
+#     def __init__(self, height_multiplier, holes_multiplier, lines_cleared_multiplier, bumpiness_multiplier):
+#         self.height_multiplier = height_multiplier
+#         self.holes_multiplier = holes_multiplier
+#         self.lines_cleared_multiplier = lines_cleared_multiplier
+#         self.bumpiness_multiplier = bumpiness_multiplier
+
+# # Example usage:
+# # Assuming you have an instance called instance1
+# instance1 = TetrisAI(1.0, 2.0, 3.0, 4.0)
+
+# # Create another instance
+# instance2 = TetrisAI(5.0, 6.0, 7.0, 8.0)
+
+# # Call crossover method to create a new instance
+# new_instance = instance1.crossover(instance2)
+# print(new_instance.height_multiplier)
+
 
 
