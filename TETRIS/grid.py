@@ -28,7 +28,7 @@ class Grid:
         new_grid.num_rows = self.num_rows
         new_grid.num_cols = self.num_cols
         new_grid.cell_size = self.cell_size
-        new_grid.grid = [row[:] for row in self.grid]  # Create a deep copy of the grid
+        new_grid.grid = [row[:] for row in self.grid]
         new_grid.colors = self.colors.copy()
         return new_grid
 
@@ -96,7 +96,7 @@ class Grid:
             for column in range(self.num_cols):
                 cell_value = self.grid[row][column]
                 cell_rect = pygame.Rect(column * self.cell_size + 11 + x_offset,
-                                        row * self.cell_size + 11 + y_offset,  # Adjust y_offset here
+                                        row * self.cell_size + 11 + y_offset,
                                         self.cell_size - 1, self.cell_size - 1)
                 pygame.draw.rect(screen, self.colors[cell_value], cell_rect)
 

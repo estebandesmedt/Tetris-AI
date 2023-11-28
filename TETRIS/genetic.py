@@ -62,7 +62,6 @@ class Genetic:
         return child1, child2
 
     def select_parents(self):
-        # Select parents based on fitness
         sorted_population = sorted(self.population, key=self.evaluate_individual, reverse=True)
         return sorted_population[0], sorted_population[1]
 
@@ -75,14 +74,11 @@ class Genetic:
 
             parent1, parent2 = self.select_parents()
 
-            # Crossover
             child1, child2 = self.crossover_individuals(parent1, parent2)
 
-            # Mutation
             child1 = self.mutate_individual(child1)
             child2 = self.mutate_individual(child2)
 
-            # Replace the least fit individuals with the new children
             self.population[-2] = child1
             self.population[-1] = child2
 

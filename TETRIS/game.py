@@ -30,7 +30,6 @@ class Game:
             self.drop_block()
 
     def apply_move(self, move):
-        # Apply the specified move to the current block
         if move['rotation'] > 0:
             for _ in range(move['rotation']):
                 self.rotate()
@@ -81,7 +80,6 @@ class Game:
         while self.block_inside() and self.block_fits():
             self.current_block.move(0, -1)
 
-        # If the block is now outside the grid or doesn't fit, move it back to the right
         if not self.block_inside() or not self.block_fits():
             self.current_block.move(0, 1)
 
@@ -89,7 +87,6 @@ class Game:
         while self.block_inside() and self.block_fits():
             self.current_block.move(0, 1)
 
-        # If the block is now outside the grid or doesn't fit, move it back to the right
         if not self.block_inside() or not self.block_fits():
             self.current_block.move(0, -1)
 
