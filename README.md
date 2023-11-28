@@ -27,7 +27,8 @@ Op deze manier kregen wij data, het ging snel, maar duurde toch nog lang. Daarom
 !!!Nog af te werken (226/500 woorden)
 
 ## Resultaat
-De tetris AI bestaat uit een aantal klassen die elk verschillende methodes en attributen bezitten. Sommige van deze klassen zijn bondig, terwijl andere veel functies vervullen. ![Alt text](./Images/Classes.png) 
+De tetris AI bestaat uit een aantal klassen die elk verschillende methodes en attributen bezitten. Sommige van deze klassen zijn bondig, terwijl andere veel functies vervullen.
+![Alt text](./Images/Classes.png) 
 In het begin schommelden de waarden onder de 5000 en piekte het algorritme op 15000. Na wat testen, bijwerken en andere vermenigvuldigers kwamen we op volgende grafiek (die ook die eerste waarden enorm benadrukt). ![Alt text](./TETRIS/data/ai_scores_histogram.png) 
 !!!Nog af te werken (0/500 woorden)
 
