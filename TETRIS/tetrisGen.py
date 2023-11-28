@@ -10,7 +10,7 @@ pygame.init()
 start_time = time.time()
 
 #only 20 and 30 are valid values (20 will be 10 grids, while 30 is 3 grids)
-custom_cell_size = 30
+custom_cell_size = 20
 ratio = custom_cell_size/30
 
 title_font = pygame.font.Font(None, round(ratio*40))
