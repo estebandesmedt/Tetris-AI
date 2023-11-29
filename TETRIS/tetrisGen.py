@@ -9,7 +9,7 @@ from grid import Grid
 pygame.init()
 start_time = time.time()
 pygame.mixer.init()
-rotate_sound = pygame.mixer.Sound("TETRIS/Sounds/rotate.ogg")
+music_sound = pygame.mixer.Sound("TETRIS/Sounds/music.ogg")
 
 #only 20 and 30 are valid values (20 will be 10 grids, while 30 is 3 grids)
 custom_cell_size = 20
@@ -116,6 +116,7 @@ r = 0
 s = 0
 
 while True:
+    music_sound.play()
     elapsed_time = time.time() - start_time
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
