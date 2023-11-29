@@ -38,7 +38,13 @@ added = False
 paused = False
 tetris_ai.mutation()
 
+pygame.mixer.init()
+rotate_sound = pygame.mixer.Sound("TETRIS/Sounds/rotate.ogg")
+music_sound = pygame.mixer.Sound("TETRIS/Sounds/music.ogg")
+
+
 while True:
+    music_sound.play()
     elapsed_time = time.time() - start_time
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -60,6 +66,7 @@ while True:
             gamePlayer.update_score(0, 1)
             if event.key == pygame.K_UP and not gamePlayer.game_over:
                 gamePlayer.rotate()
+                rotate_sound.play()
             if event.key == pygame.K_SPACE and not gamePlayer.game_over:
                 gamePlayer.drop_block()
             if event.key == pygame.K_p:
