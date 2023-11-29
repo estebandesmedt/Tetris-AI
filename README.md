@@ -36,7 +36,7 @@ Open de terminal binnen het project en kopiëer volgende tekst in de command lin
 De tetris AI bestaat uit een aantal klassen die elk verschillende methodes en attributen bezitten. Sommige van deze klassen zijn bondig, terwijl andere veel functies vervullen.
 In het begin schommelden de waarden onder de 5000 en piekte het algoritme op 15000. Na wat testen, bijwerken en andere vermenigvuldigers kwamen we op volgende grafiek (die ook die eerste waarden enorm benadrukt). ![Alt text](./TETRIS/data/ai_scores_histogram.png) Ook zijn deze scores niet altijd hoog, want door de willekeurige heuristieke waarden kunnen soms slechte combinaties worden gemaakt die laag scoren. Met bepaalde vermenigvuldigers worden hogere scores behaald (af te leiden uit sorted_ai_scores.txt en sorted_average_scores.txt in de folder data). Door het algoritme veel te laten itereren bekwamen we veel data om zo de beste optie te kiezen. Dit is de structuur van ons project. ![Alt text](./Images/Classes.png) We hebben twee main files in ons project. tetrisPygame.py is een speler die tegen de AI speelt, terwijl tetrisGen.py het algoritme op meerdere velden (3 of 10) laat lopen. Beide hebben een soortgelijke werking. Daarna volgt de belangrijkste klasse voor ons project, "game.py". Hierin wordt alle functionaliteit gedeclareerd en worden functies gebundeld om het spel te spelen en bepaalde AI methoden toegevoegd (zonder deze methoden zou ons algoritme niet werken). Hier kan je alle bewegingen vinden, controle voor blokken (binnen het veld, niet in een andere blok), het huidige en volgende blok en een methode om het veld te tekenen. Daarna hebben we een klasse "grid.py" die alle functionaliteit van het speelveld bevat. Er bevinden zich parameters voor de hoogte, breedte in blokken en in pixels. Hier bevinden zich veel simpele methodes die gebruikt worden in de game klasse. Vervolgens hebben we een file "block.py". Deze klasse bevat alle functionaliteit omtrent enkele blokken. In combinatie met "blocks.py", waar de blokken gedeclareerd worden, krijgen de blokken vorm, een rotatie status en een id. Voor het spel zelf het we nog twee zeer simpele klassen. "Colors.py" bevat natuurlijk alle kleuren die we gebruiken en "position.py" bevat enkel een attribuut voor de rij en de kolom. Tot slot hebben we de "tetrisai.py" file die alle functionaliteit bevat voor ons AI algoritme. Er wordt aan de hand van een aantal methodes een score gegeven aan elke zet voor het huidige blok en deze wordt dan ook toegepast.
   
-     def evaluate_board(self, board):
+     `def evaluate_board(self, board):
         height_penalty = self.calculate_height_penalty(board)
         lines_cleared_bonus = self.calculate_lines_cleared_bonus(self.tetris)
         holes_penalty = self.calculate_holes_penalty(board)
@@ -49,7 +49,7 @@ In het begin schommelden de waarden onder de 5000 en piekte het algoritme op 150
 
         total_score = height_score + lines_score + holes_score + bumpiness_score
 
-        return total_score
+        return total_score `
 
  Hier worden de vermenigvuldigers ook gemuteerd. Voor het spel zelf hebben we nog een file "genetic.py", maar deze gebruiken we voorlopig niet. Tot slot hebben we nog drie files voor data analyse. Wanneer je het programma laat lopen wordt een file gemaakt/geupdate in de folder data. Hier vinden we de gesorteerde scores (met hun vermenigvuldigers), de gemiddelde score per vermenigvuldigers en een visuele weergave van de scores.
 !!!Nog af te werken (439/500 woorden)
