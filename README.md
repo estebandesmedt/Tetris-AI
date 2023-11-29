@@ -28,9 +28,8 @@ Op deze manier kregen wij data, het ging snel, maar duurde toch nog lang. Daarom
 
 ## Resultaat
 De tetris AI bestaat uit een aantal klassen die elk verschillende methodes en attributen bezitten. Sommige van deze klassen zijn bondig, terwijl andere veel functies vervullen.
-![Alt text](./Images/Classes.png) 
-In het begin schommelden de waarden onder de 5000 en piekte het algorritme op 15000. Na wat testen, bijwerken en andere vermenigvuldigers kwamen we op volgende grafiek (die ook die eerste waarden enorm benadrukt). ![Alt text](./TETRIS/data/ai_scores_histogram.png) 
-!!!Nog af te werken (0/500 woorden)
+In het begin schommelden de waarden onder de 5000 en piekte het algorritme op 15000. Na wat testen, bijwerken en andere vermenigvuldigers kwamen we op volgende grafiek (die ook die eerste waarden enorm benadrukt). ![Alt text](./TETRIS/data/ai_scores_histogram.png) Ook zijn deze scores niet altijd hoog, want door de willekeurige heuristieke waarden kunnen soms slechte combinaties worden gemaakt die laag scoren. Met bepaalde vermenigvuldigers worden hogere scores behaald (af te leiden uit sorted_ai_scores.txt en sorted_average_scores.txt in de folder data). Door het algoritme veel te laten itereren bekwamen we veel data om zo de beste optie te kiezen. 
+!!!Nog af te werken (120/500 woorden)
 
 ## Uitbreiding
 !!!Nog af te werken (0/200 woorden)
@@ -38,6 +37,7 @@ In het begin schommelden de waarden onder de 5000 en piekte het algorritme op 15
 - Correcte bumpiness and lines cleared score
 
 ## Conclusie
+De hoofddoelstelling die wij verwoordden in het begon van de readme werd zeker behaald. We leerden veel bij over hoe AI algoritmen werken, de moeilijkheid, de sterkte ervan en hoe je ze kan toepassen. Dit project focuste vooral op heuristieke algorritmen waar we veel over bijleerden, maar we konden ook proeven van genetische algoritmen.
 !!!Nog af te werken (0/200 woorden)
 
 ## Bibliografie

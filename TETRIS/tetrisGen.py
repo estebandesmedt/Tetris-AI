@@ -383,7 +383,7 @@ while True:
                     r += 1
                     print(r)
                     if r % 10 == 0:
-                        tetris_ai9.mutation()
+                        tetris_ai9.smallMutation()
                         print("9\nHeight: " + str(tetris_ai9.height_multiplier) + "\nHoles: "+ str(tetris_ai9.holes_multiplier))
             if gameAI10.game_over:
                 screen.blit(game_over_surface, (ratio*2320, ratio*1150, ratio*50, ratio*50))
@@ -401,7 +401,7 @@ while True:
                         s += 1
                         print(s)
                         if s % 10 == 0:
-                            tetris_ai10.mutation()
+                            tetris_ai10.smallMutation()
                             print("10\nHeight: " + str(tetris_ai10.height_multiplier) + "\nHoles: "+ str(tetris_ai10.holes_multiplier))
     if custom_cell_size != 30:
         if gameAI1.game_over and gameAI2.game_over and gameAI3.game_over and gameAI4.game_over and gameAI5.game_over and gameAI6.game_over and gameAI7.game_over and gameAI8.game_over and gameAI9.game_over and gameAI10.game_over:

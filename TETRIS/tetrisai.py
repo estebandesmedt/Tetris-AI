@@ -6,14 +6,22 @@ class TetrisAI:
         self.tetris = tetris
         self.height_multiplier = 0.91
         self.holes_multiplier = 0.9
-        self.lines_cleared_multiplier = 0.9
-        self.bumpiness_multiplier = 0.9
+        self.lines_cleared_multiplier = 0.7
+        self.bumpiness_multiplier = 0.1
 
     def reset(self):
         self.tetris.reset()
 
     def mutation(self):
             mutation_range = 0.1
+
+            self.height_multiplier = max(0.5, min(2, round(self.height_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.lines_cleared_multiplier = max(0.5, min(2.5, round(self.lines_cleared_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.holes_multiplier = max(0.5, min(2, round(self.holes_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+            self.bumpiness_multiplier = max(0.01, min(0.2, round(self.bumpiness_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
+
+    def smallMutation(self):
+            mutation_range = 0.01
 
             self.height_multiplier = max(0.5, min(2, round(self.height_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
             self.lines_cleared_multiplier = max(0.5, min(2.5, round(self.lines_cleared_multiplier + random.uniform(-mutation_range, mutation_range), 2)))
@@ -50,7 +58,16 @@ class TetrisAI:
 
     def calculate_lines_cleared_bonus(self, game_instance):
         cleared_lines = game_instance.clearedLines
-        return cleared_lines
+        cleared_lines_b = 0
+        if cleared_lines == 1:
+            cleared_lines_b = cleared_lines
+        elif cleared_lines == 2:
+            cleared_lines_b = 3
+        elif cleared_lines == 3:
+            cleared_lines_b = 6
+        elif cleared_lines == 4:
+            cleared_lines_b = 20
+        return cleared_lines_b
     
     def calculate_holes_penalty(self, board):
         holes = 0
