@@ -1,4 +1,14 @@
 # Tetris-AI
+## Inhoud
+
+- [Doelstellingen](#doelstellingen)
+- [Probleemstelling](#probleemstelling)
+- [Analyse](#analyse)
+- [Resultaat](#resultaat)
+- [Uitbreiding](#uitbreiding)
+- [Conclusie](#conclusie)
+- [Bibliografie](#bibliografie)
+- [License and author info](#license-and-author-info)
 ## Doelstelling(en)
 De hoofddoelstelling van dit project is het bijleren in verband met AI algoritmen aan de hand van een project die artificiële inteligentie implementeerd. Wij kozen ervoor om de uitdaging aan te gaan om een AI bot te maken die zelf tetris speelt. Om dit te bereiken zijn er een aantal subdoelen die we moeten behalen om dit project tot een goed einde te brengen.
 
@@ -51,19 +61,14 @@ In het begin schommelden de waarden onder de 5000 en piekte het algoritme op 150
 
         return total_score `
 
- Hier worden de vermenigvuldigers ook gemuteerd. Voor het spel zelf hebben we nog een file "genetic.py", maar deze gebruiken we voorlopig niet. Tot slot hebben we nog drie files voor data analyse. Wanneer je het programma laat lopen wordt een file gemaakt/geupdate in de folder data. Hier vinden we de gesorteerde scores (met hun vermenigvuldigers), de gemiddelde score per vermenigvuldigers en een visuele weergave van de scores.
+ In deze klasse worden de vermenigvuldigers ook gemuteerd. Voor het spel zelf hebben we nog een file "genetic.py", maar deze gebruiken we voorlopig niet. Tot slot hebben we nog drie files voor data analyse. Wanneer je het programma laat lopen wordt een file gemaakt/geupdate in de folder data. Hier vinden we de gesorteerde scores (met hun vermenigvuldigers), de gemiddelde score per vermenigvuldigers en een visuele weergave van de scores.
 !!!Nog af te werken (439/500 woorden)
 
 ## Uitbreiding
-We beslisten al snel om enkel te werken met het huidige blok. Uit de vele video's die wij bekeken was de conclusie dat het een grotere uitdaging is om het op deze manier te doen. Natuurlijk zal het algoritme een hogere score halen met kennis van het volgende blok, dit zou een uitbreiding zijn die we zouden toepassen met meer tijd om aan het project te werken. Voorlopig hebben we dit overgeslaan. In ons heuristiek algoritme voor het huidige blok hadden wij problemen met de berekening van de "bumpiness" en de hoeveelheid lijnen die een zet kan verwijderen. De tweede lukte om correct op te lossen. De zogenaamde "bumpiness" geeft niet altijd de correcte waarde door een verkeerde codering. De oplossing vonden wij niet en we besloten toch de huidige methode te gebruiken omdat er toch wel ergens een lijn in de berekening zit. We startten wel telkens met een lage waarde voor de vermenigvuldiger voor deze parameter. 
-!!!Nog af te werken (158/200 woorden)
-- Next_block knowledge
-- Correcte bumpiness en lines cleared score
-- Grijze blokken?
+We beslisten al snel om enkel te werken met het huidige blok. Uit de vele video's die wij bekeken was de conclusie dat het een grotere uitdaging is om het op deze manier te doen. Natuurlijk zal het algoritme een hogere score halen met kennis van het volgende blok, dit zou een uitbreiding zijn die we zouden toepassen met meer tijd om aan het project te werken. Voorlopig hebben we dit overgeslaan. In ons heuristiek algoritme voor het huidige blok hadden wij problemen met de berekening van de "bumpiness" en de hoeveelheid lijnen die een zet kan verwijderen. De tweede lukte om correct op te lossen. De zogenaamde "bumpiness" geeft niet altijd de correcte waarde door een verkeerde codering. De oplossing vonden wij niet en we besloten toch de huidige methode te gebruiken omdat er toch wel ergens een lijn in de berekening zit. We startten wel telkens met een lage waarde voor de vermenigvuldiger voor deze parameter. Op deze manier heeft hij minder invloed op de berekening die vooral onderdanig is aan verandering in de "holes" en "height" vermenigvuldiger. De verhouding tussen deze twee is het belangrijkst. We hebben ook geexperimenteerd met de grijze blok functionaliteit uit de 1 tegen 1 mode van tetris, maar hier kwam ook geen doorbraak in. Dit zou zeker een meerwaarde zijn geweest voor de demo.
 
 ## Conclusie
-De hoofddoelstelling die wij verwoordden in het begon van de readme werd zeker behaald. We leerden veel bij over hoe AI algoritmen werken, de moeilijkheid, de sterkte ervan en hoe je ze kan toepassen. Dit project focuste vooral op heuristieke algorritmen waar we veel over bijleerden, maar we konden ook proeven van genetische algoritmen. Ook zijn we er in geslaagd een oplossing te vinden op onze probleemstelling. Wanneer er met de 1 tegen 1 functionaliteit wordt gewerkt (grijze blokken naar tegenstander bij como's) zal ons algoritme met goede parameters telkens winnen. Bij sommige iteraties bekwamen we zelf scores (binnen 2 minuten) waar een persoon een lange tijd voor moet spelen. Toch blijven er nog veel opties over om het algoritme te verbeteren en is onze implementatie nog verre van perfect. 
-!!!Nog af te werken (110/200 woorden)
+De hoofddoelstelling die wij verwoordden in het begon van de readme werd zeker behaald. We leerden veel bij over hoe AI algoritmen werken, de moeilijkheid, de sterkte ervan en hoe je ze kan toepassen. Dit project focuste vooral op heuristieke algorritmen waar we veel over bijleerden, maar we konden ook proeven van genetische algoritmen. Ook zijn we er in geslaagd een oplossing te vinden op onze probleemstelling. Wanneer er met de 1 tegen 1 functionaliteit wordt gewerkt (grijze blokken naar tegenstander bij como's) zal ons algoritme met goede parameters telkens winnen. Bij sommige iteraties bekwamen we zelf scores (binnen 2 minuten) waar een persoon een lange tijd voor moet spelen. Toch blijven er nog veel opties over om het algoritme te verbeteren en is onze implementatie nog verre van perfect. De basisdoelen zijn allemaal behaald zoals ook af te leiden uit de lijst in doelstellingen en een basis implementatie is succesvol gerealiseerd. We leerden hier ook dat het soms een voordeel kan leveren door eens helemaal opnieuw te beginnen voor een bepaald onderdeel in plaats van uren te zoeken naar een bepaalde oplossing en deze niet te vinden. Hadden we dit niet gedaan stonden we zeker niet zover als we nu staan. 
 
 ## Bibliografie
 - Tetris github: https://github.com/danielchang2002/tetris_ai.git
@@ -71,3 +76,6 @@ De hoofddoelstelling die wij verwoordden in het begon van de readme werd zeker b
 - AI bot guide (no code): https://codemyroad.wordpress.com/2013/04/14/tetris-ai-the-near-perfect-player/
 
 - TETRIS AI Github (ons project): https://github.com/estebandesmedt/Tetris-AI
+
+## License and author info
+Made by Colin Bossuyt and Esteban Desmedt for Vives Xaveriaenenstraat, in semester 1 fase 2 voor het vak AI programming (keuzetraject Software Engineer & AI).
