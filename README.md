@@ -42,6 +42,7 @@ Open de terminal binnen het project en kopiëer volgende tekst in de command lin
 ```
 - pip install matplotlib
 ```
+Het programma kan ook makkelijk via een .exe file worden gebruikt.
 
 ## Resultaat
 De tetris AI bestaat uit een aantal klassen die elk een aantal verschillende methodes en attributen bezitten. Sommige van deze klassen zijn enorm bondig, terwijl andere veel meer functies vervullen.

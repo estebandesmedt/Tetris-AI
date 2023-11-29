@@ -1,9 +1,3 @@
-Height: 0.9
-Lines : 0.5
-Holes : 1.03
-Bumps : 0.01
-Average Score : 14300.00
-----------------------------------------
 Height: 0.78
 Lines : 0.64
 Holes : 0.95
@@ -57,6 +51,12 @@ Lines : 0.55
 Holes : 0.99
 Bumps : 0.02
 Average Score : 10430.00
+----------------------------------------
+Height: 0.91
+Lines : 0.72
+Holes : 0.89
+Bumps : 0.06
+Average Score : 10400.00
 ----------------------------------------
 Height: 0.9
 Lines : 0.69
@@ -117,6 +117,12 @@ Lines : 0.82
 Holes : 0.99
 Bumps : 0.08
 Average Score : 9660.00
+----------------------------------------
+Height: 0.87
+Lines : 0.76
+Holes : 0.86
+Bumps : 0.08
+Average Score : 9600.00
 ----------------------------------------
 Height: 0.77
 Lines : 0.69
@@ -719,6 +725,12 @@ Bumps : 0.05
 Average Score : 7260.00
 ----------------------------------------
 Height: 0.9
+Lines : 0.7
+Holes : 0.91
+Bumps : 0.1
+Average Score : 7234.31
+----------------------------------------
+Height: 0.9
 Lines : 0.59
 Holes : 0.87
 Bumps : 0.01
@@ -747,12 +759,6 @@ Lines : 0.51
 Holes : 1.21
 Bumps : 0.01
 Average Score : 7150.00
-----------------------------------------
-Height: 0.9
-Lines : 0.7
-Holes : 0.91
-Bumps : 0.1
-Average Score : 7145.00
 ----------------------------------------
 Height: 0.84
 Lines : 0.54
@@ -796,6 +802,12 @@ Holes : 1.34
 Bumps : 0.14
 Average Score : 7030.00
 ----------------------------------------
+Height: 0.9
+Lines : 0.5
+Holes : 1.03
+Bumps : 0.01
+Average Score : 7011.54
+----------------------------------------
 Height: 0.95
 Lines : 0.75
 Holes : 1.1
@@ -831,6 +843,12 @@ Lines : 0.53
 Holes : 0.82
 Bumps : 0.2
 Average Score : 6930.00
+----------------------------------------
+Height: 0.9
+Lines : 0.7
+Holes : 0.91
+Bumps : 0.09
+Average Score : 6900.00
 ----------------------------------------
 Height: 0.99
 Lines : 0.5
@@ -1270,6 +1288,12 @@ Holes : 0.82
 Bumps : 0.09
 Average Score : 6000.00
 ----------------------------------------
+Height: 0.85
+Lines : 0.73
+Holes : 0.83
+Bumps : 0.01
+Average Score : 6000.00
+----------------------------------------
 Height: 0.93
 Lines : 0.1
 Holes : 0.95
@@ -1630,12 +1654,6 @@ Holes : 0.9
 Bumps : 0.02
 Average Score : 5520.00
 ----------------------------------------
-Height: 0.91
-Lines : 0.7
-Holes : 0.9
-Bumps : 0.1
-Average Score : 5501.96
-----------------------------------------
 Height: 0.88
 Lines : 0.57
 Holes : 0.89
@@ -1761,6 +1779,12 @@ Lines : 0.5
 Holes : 0.87
 Bumps : 0.2
 Average Score : 5330.00
+----------------------------------------
+Height: 0.91
+Lines : 0.7
+Holes : 0.9
+Bumps : 0.1
+Average Score : 5322.61
 ----------------------------------------
 Height: 0.88
 Lines : 0.5
@@ -2260,6 +2284,12 @@ Holes : 0.8
 Bumps : 0.2
 Average Score : 4600.00
 ----------------------------------------
+Height: 0.81
+Lines : 0.61
+Holes : 0.93
+Bumps : 0.13
+Average Score : 4600.00
+----------------------------------------
 Height: 1.01
 Lines : 0.82
 Holes : 0.76
@@ -2420,6 +2450,12 @@ Height: 0.9
 Lines : 0.5
 Holes : 0.76
 Bumps : 0.07
+Average Score : 4300.00
+----------------------------------------
+Height: 0.94
+Lines : 0.69
+Holes : 0.84
+Bumps : 0.01
 Average Score : 4300.00
 ----------------------------------------
 Height: 1.07
@@ -2776,6 +2812,12 @@ Holes : 0.75
 Bumps : 0.04
 Average Score : 3420.00
 ----------------------------------------
+Height: 0.95
+Lines : 0.72
+Holes : 0.96
+Bumps : 0.14
+Average Score : 3400.00
+----------------------------------------
 Height: 1.26
 Lines : 0.6
 Holes : 1.1
@@ -2798,6 +2840,12 @@ Height: 0.82
 Lines : 0.7
 Holes : 0.87
 Bumps : 0.07
+Average Score : 3300.00
+----------------------------------------
+Height: 0.91
+Lines : 0.76
+Holes : 0.81
+Bumps : 0.02
 Average Score : 3300.00
 ----------------------------------------
 Height: 1.03
@@ -2890,6 +2938,12 @@ Holes : 0.63
 Bumps : 0.15
 Average Score : 2100.00
 ----------------------------------------
+Height: 0.84
+Lines : 0.78
+Holes : 0.97
+Bumps : 0.1
+Average Score : 2000.00
+----------------------------------------
 Height: 1.0
 Lines : 1.0
 Holes : 1.0
@@ -2907,6 +2961,18 @@ Lines : 1.03
 Holes : 0.99
 Bumps : 1.09
 Average Score : 1750.00
+----------------------------------------
+Height: 0.85
+Lines : 0.73
+Holes : 0.84
+Bumps : 0.14
+Average Score : 1400.00
+----------------------------------------
+Height: 0.87
+Lines : 0.74
+Holes : 0.88
+Bumps : 0.09
+Average Score : 1400.00
 ----------------------------------------
 Height: 0.91
 Lines : 0.68
@@ -2949,6 +3015,12 @@ Lines : 1.0
 Holes : 1.0
 Bumps : 100.0
 Average Score : 666.67
+----------------------------------------
+Height: 0.9
+Lines : 0.71
+Holes : 0.92
+Bumps : 0.1
+Average Score : 600.00
 ----------------------------------------
 Height: 0.94
 Lines : 0.93
