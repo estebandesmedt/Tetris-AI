@@ -40,7 +40,9 @@ tetris_ai.mutation()
 
 pygame.mixer.init()
 rotate_sound = pygame.mixer.Sound("TETRIS/Sounds/rotate.ogg")
-music_sound = pygame.mixer.Sound("TETRIS/Sounds/music.ogg")
+music_sound = pygame.mixer.Sound("TETRIS/Sounds/tetrisMusic.mp3")
+gameOver_sound = pygame.mixer.Sound("TETRIS/Sounds/gameOver.mp3")
+
 
 
 while True:
@@ -86,17 +88,21 @@ while True:
     screen.fill(Colors.dark_blue)
     #player 1
     screen.blit(score_surface, (365, 20, 50, 50))
-    screen.blit(next_surface, (375, 180, 50, 50))
+    screen.bltit(next_surface, (375, 180, 50, 50))
     #player2
     screen.blit(score_surface, (860, 20, 50, 50))
     screen.blit(next_surface, (870, 180, 50, 50))
 
     if gamePlayer.game_over:
         screen.blit(game_over_surface, (320, 450, 50, 50))
+        music_sound.stop()
+        gameOver_sound.play(loops=0)
     elif paused:
         screen.blit(paused_surface, (350, 450, 50, 50))
 
     if gameAI.game_over:
+        music_sound.stop()
+        gameOver_sound.play(loops=0)
         screen.blit(game_over_surface, (820, 450, 50, 50))
         file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "ai_score.txt")
 
