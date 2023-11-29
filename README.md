@@ -50,7 +50,7 @@ In het begin schommelden de waarden onder de 5000 en piekte het algoritme op 150
         total_score = height_score + lines_score + holes_score + bumpiness_score
 
         return total_score
-´´´
+
  Hier worden de vermenigvuldigers ook gemuteerd. Voor het spel zelf hebben we nog een file "genetic.py", maar deze gebruiken we voorlopig niet. Tot slot hebben we nog drie files voor data analyse. Wanneer je het programma laat lopen wordt een file gemaakt/geupdate in de folder data. Hier vinden we de gesorteerde scores (met hun vermenigvuldigers), de gemiddelde score per vermenigvuldigers en een visuele weergave van de scores.
 !!!Nog af te werken (439/500 woorden)
 
