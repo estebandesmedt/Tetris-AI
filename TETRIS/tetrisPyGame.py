@@ -88,7 +88,7 @@ while True:
     screen.fill(Colors.dark_blue)
     #player 1
     screen.blit(score_surface, (365, 20, 50, 50))
-    screen.bltit(next_surface, (375, 180, 50, 50))
+    screen.blit(next_surface, (375, 180, 50, 50))
     #player2
     screen.blit(score_surface, (860, 20, 50, 50))
     screen.blit(next_surface, (870, 180, 50, 50))

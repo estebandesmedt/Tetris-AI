@@ -12,7 +12,7 @@ pygame.mixer.init()
 music_sound = pygame.mixer.Sound("TETRIS/Sounds/music.ogg")
 
 #only 20 and 30 are valid values (20 will be 10 grids, while 30 is 3 grids)
-custom_cell_size = 20
+custom_cell_size = 30
 ratio = custom_cell_size/30
 
 title_font = pygame.font.Font(None, round(ratio*40))
