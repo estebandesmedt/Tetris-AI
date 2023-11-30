@@ -58,15 +58,9 @@ class TetrisAI:
 
     def calculate_lines_cleared_bonus(self, game_instance):
         cleared_lines = game_instance.clearedLines
-        cleared_lines_b = 0
-        if cleared_lines == 1:
-            cleared_lines_b = cleared_lines
-        elif cleared_lines == 2:
-            cleared_lines_b = 3
-        elif cleared_lines == 3:
-            cleared_lines_b = 6
-        elif cleared_lines == 4:
-            cleared_lines_b = 20
+        cleared_lines_b = cleared_lines
+        if cleared_lines == 4:
+            cleared_lines_b = 1000
         return cleared_lines_b
     
     def calculate_holes_penalty(self, board):
