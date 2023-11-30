@@ -116,7 +116,7 @@ r = 0
 s = 0
 
 while True:
-    music_sound.play()
+    # music_sound.play()
     elapsed_time = time.time() - start_time
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

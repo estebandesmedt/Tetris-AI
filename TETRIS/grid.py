@@ -23,6 +23,9 @@ class Grid:
                 print(self.grid[row][column], end = " ")
             print()
 
+    def get_rows(self):
+        return len(self.grid) if self.grid else 0
+
     def clone(self):
         new_grid = Grid()
         new_grid.num_rows = self.num_rows
