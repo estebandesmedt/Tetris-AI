@@ -78,7 +78,6 @@ class TetrisAI:
                     holes += 1
                 elif cell != 0:
                     hole_found = True
-        # print(holes)
         return -holes
 
     def calculate_bumpiness_penalty(self, board):
