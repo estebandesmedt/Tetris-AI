@@ -4,8 +4,8 @@ import random
 class TetrisAI:
     def __init__(self, tetris):
         self.tetris = tetris
-        self.height_multiplier = 0.78
-        self.holes_multiplier = 0.95
+        self.height_multiplier = 10
+        self.holes_multiplier = 0.1
         self.lines_cleared_multiplier = 0.64
         self.bumpiness_multiplier = 0.06
 
